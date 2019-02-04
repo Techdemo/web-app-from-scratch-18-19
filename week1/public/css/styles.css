@@ -1,0 +1,20 @@
+* {
+  font-family: "Open Sans", sans-serif;
+}
+h1 {
+  font-family: "Open Sans", sans-serif;
+}
+
+body {
+  background-color: #2d2f36;
+}
+#root {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.card {
+  background-color: white;
+  padding: 20px;
+  margin: 20px;
+}
