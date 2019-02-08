@@ -1,18 +1,26 @@
-var request = new XMLHttpRequest();
-var app = document.getElementById("root");
+const url = "https://swapi.co/api/planets/";
 
-request.open("GET", "https://swapi.co/api/people/", true);
-request.onload = function() {
-  // Begin accessing JSON data here
-  var data = JSON.parse(this.response);
-  console.log("data", data);
-  // data is a regular object that does not have a forEach method.
-  console.log("results", data.results);
-  data.results.forEach(person => {
-    console.log(person.name);
+let get = url => {
+  return new Promise(function(resolve, reject) {
+    let req = new XMLHttpRequest();
+    req.open("GET", url);
+    req.onload = () => {
+      try {
+        resolve(req.response);
+      } catch {
+        reject(Error(req.statusText));
+        console.log(req.statusText);
+      }
+    };
+    req.onerror = () => {
+      reject(Error("Network Error"));
+    };
+    req.send();
   });
 };
-request.send();
 
-// response is een method op de request
-// de swapi heeft meerdere pagina's.
+// roept get functie aan en rendert vervolgens namen van de planeten
+get(url).then(response => {
+  let data = JSON.parse(response);
+  console.log(data.results);
+});
