@@ -1,17 +1,10 @@
 # Week 1 - Hello API 🐒
 
-Doel: Data ophalen uit een API en renderen in een overzichtspagina.
-
 [Opdrachten](https://drive.google.com/open?id=1OVhWQNaCgSluYviTKKWcApkyPd23xow1PiExb8GYANM)
 
 [Slides](https://drive.google.com/open?id=1Rjl9xqXoKniQSRJPdkU1O5YwWC33SJK8KiV0a-H_xZU)
 
 [Link](https://techdemo.github.io/web-app-from-scratch-18-19/)
-
-- Welke actoren zitten er in jouw applicatie? (actor diagram)
-- Hoe flowed interactie door de applicatie? (interaction diagram)
-- Welke design patterns en best practices
-- Wat zou je nog willen toevoegen (feature wishlist / backlog)
 
 ## Purpose of the app
 
@@ -32,3 +25,8 @@ For the best practices I tried to use a Promise in requesting the data from the 
 ## Interaction diagram
 
 ## feature wishlist
+
+## To do
+
+[ ] Make multiple views  
+[ ] Requests over multiple pages in the API
