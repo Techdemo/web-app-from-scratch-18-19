@@ -1,6 +1,8 @@
-"use strict"
+'use strict';
+
 // from component folder
 import { planetDiv } from './components/planetDiv.js';
+// import { router } from './routes/router.js';
 
 let app = document.getElementById("root");
 let submit = document.getElementById("submit");
@@ -15,7 +17,8 @@ fetch(url)
     return data.json();
   })
   .then(res => {
-    removePlanets()
+    console.log(res)
+    removePlanets();
     renderPlanets(res.results)
   })
 

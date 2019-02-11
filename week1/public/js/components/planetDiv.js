@@ -23,6 +23,12 @@ class planetDiv {
             const planetTerrain = document.createElement("p")
             planetTerrain.textContent = "Terrain: " + planet.terrain
             planetContainer.appendChild(planetTerrain)
+
+            const detailButton = document.createElement("a")
+            detailButton.textContent = "see details";
+            detailButton.href = planet.url
+            planetContainer.appendChild(detailButton)
+
         })
     }
 
