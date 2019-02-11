@@ -25,7 +25,7 @@ fetch(url)
 
   let populatePlanets = (planets) => {
     let planetContainer = new planetDiv(planets);
-    planetContainer.render(app);
+    planetContainer.render();
   }
 
   let removePlanets = () => {
