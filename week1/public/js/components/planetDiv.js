@@ -8,7 +8,7 @@ class planetDiv {
     }
     render (){
         this.title.forEach(planet => {
-            const planetContainer = document.createElement("section")
+            const planetContainer = document.createElement("article")
             planetContainer.setAttribute("class", "planetContainer")
             app.appendChild(planetContainer);
 
@@ -28,10 +28,8 @@ class planetDiv {
             detailButton.textContent = "see details";
             detailButton.href = planet.url
             planetContainer.appendChild(detailButton)
-
         })
     }
-
 }
 
 export { planetDiv };

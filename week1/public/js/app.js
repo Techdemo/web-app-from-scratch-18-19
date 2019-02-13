@@ -2,40 +2,42 @@
 
 // from component folder
 import { planetDiv } from './components/planetDiv.js';
-// import { router } from './routes/router.js';
 
 let app = document.getElementById("root");
 let submit = document.getElementById("submit");
     submit.addEventListener("click", getData)
 
 function getData () {
-  let pageNum = document.getElementById("pageNum").value;
-  let url = `https://swapi.co/api/planets/?page=${pageNum}`;
+  let pageNum = document.getElementById("pageNum");
+  let pageNumValue = pageNum.value
+  let url = `https://swapi.co/api/planets/?page=${pageNumValue}`;
+  fetch(url)
+    .then(data => {
+      return data.json();
+    })
+    .then(res => {
+      renderSelect(res.count)
+      app.innerHTML = ''
+      renderPlanets(res.results)
+    })
 
-fetch(url)
-  .then(data => {
-    return data.json();
-  })
-  .then(res => {
-    console.log(res)
-    removePlanets();
-    renderPlanets(res.results)
-  })
+    let renderPlanets = planets => {
+      planets.length == 0 ? noPlanets() : populatePlanets(planets)
+    }
 
-  let renderPlanets = planets => {
-    this == 0 ? noPlanets() : populatePlanets(planets)
-  }
+    let renderSelect = select => {
+      pageNum.innerHTML = ''
+      for (let index = 1; index <= Math.round(select / 10); index++){
+        let option = document.createElement("option");
+        option.value = index
+        option.textContent = index
+        pageNum.appendChild(option);
+       }
+    }
 
-  let populatePlanets = (planets) => {
-    let planetContainer = new planetDiv(planets);
-    planetContainer.render();
-  }
-
-  let removePlanets = () => {
-      let planetContainer = document.getElementsByClassName("planetContainer");
-        for (let index of planetContainer) {
-        planetContainer[0].parentNode.removeChild(planetContainer[0]);
-     }
+    let populatePlanets = (planets) => {
+      let planetContainer = new planetDiv(planets);
+      planetContainer.render();
     }
 }
 
