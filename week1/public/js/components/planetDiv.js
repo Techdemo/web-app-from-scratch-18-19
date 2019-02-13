@@ -8,6 +8,7 @@ class planetDiv {
     }
     render (){
         this.title.forEach(planet => {
+
             const planetContainer = document.createElement("article")
             planetContainer.setAttribute("class", "planetContainer")
             app.appendChild(planetContainer);
@@ -26,10 +27,16 @@ class planetDiv {
 
             const detailButton = document.createElement("a")
             detailButton.textContent = "see details";
-            detailButton.href = planet.url
+            let url = planet.url
+            let match = url.search(Number)
+            // let match = url.match(/planets/(\d+)/)
+            console.log(match)
+            console.log(url)
+            // detailButton.addEventListener('click', getDetailData(url))
+            // detailButton.href = 'https://swapi.co/api/planet/'
             planetContainer.appendChild(detailButton)
         })
     }
-}
 
+}
 export { planetDiv };

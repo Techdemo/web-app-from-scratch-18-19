@@ -19,6 +19,7 @@ function getData () {
       renderSelect(res.count)
       app.innerHTML = ''
       renderPlanets(res.results)
+      console.log(res)
     })
 
     let renderPlanets = planets => {
@@ -27,9 +28,9 @@ function getData () {
 
     let renderSelect = select => {
       pageNum.innerHTML = ''
-      for (let index = 1; index <= Math.round(select / 10); index++){
+      for (let index = 1; index <= Math.ceil(select / 10); index++){
         let option = document.createElement("option");
-        option.value = index
+        option.value,
         option.textContent = index
         pageNum.appendChild(option);
        }
@@ -43,3 +44,7 @@ function getData () {
 
 getData();
 export { app as app }
+
+
+// to do
+// [ ] Select values resets after every request. Fix that
