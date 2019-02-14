@@ -1,5 +1,6 @@
 'use strict';
 
+
 // from component folder
 import { planetDiv } from './components/planetDiv.js';
 
@@ -19,7 +20,6 @@ function getData () {
       renderSelect(res.count)
       app.innerHTML = ''
       renderPlanets(res.results)
-      console.log(res)
     })
 
     let renderPlanets = planets => {
@@ -41,6 +41,7 @@ function getData () {
       planetContainer.render();
     }
 }
+
 
 getData();
 export { app as app }

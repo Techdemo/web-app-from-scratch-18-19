@@ -8,7 +8,8 @@
   <link rel="stylesheet" href="./public/css/styles.css" type="text/css">
   </head>
   <header>
-    <h2>een extra git commit</h2>
+    <a href="/week1">Home</a>
+    <h2 id="hashUpdate"></h2>
   </header>
   <body>
     <form>
@@ -20,7 +21,44 @@
 
     </main>
   <script type="module" src="./public/js/app.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/page.js/1.11.4/page.js"></script>
-  </body>
+
+    <script>
+
+      window.addEventListener('hashchange', function (e){
+        let url = window.location.hash.substring(1)
+        let app = document.getElementById("root")
+        fetch(url)
+          .then(data => {
+            return data.json();
+          })
+          .then(res =>{
+            console.log(res)
+            app.innerHTML = ''
+            renderDetail(res)
+          })
+
+          let renderDetail = planetDetail => {
+            console.log(planetDetail)
+
+            for (var key in planetDetail) {
+    console.log(planetDetail[key]);
+}
+            // let planetDetailName = planetDetail.name
+            // console.log(planetDetailName)
+
+            let planetDetailCard = document.createElement("article")
+            planetDetailCard.setAttribute("class", "planetContainer")
+            app.appendChild(planetDetailCard)
+
+            let planetDetailTitle = document.createElement("h2")
+            planetDetailTitle.textContent = planetDetail.name
+            planetDetailCard.appendChild(planetDetailTitle)
+          }
+      })
+
+
+    </script>
+
+</body>
 
 </html>

@@ -27,13 +27,7 @@ class planetDiv {
 
             const detailButton = document.createElement("a")
             detailButton.textContent = "see details";
-            let url = planet.url
-            let match = url.search(Number)
-            // let match = url.match(/planets/(\d+)/)
-            console.log(match)
-            console.log(url)
-            // detailButton.addEventListener('click', getDetailData(url))
-            // detailButton.href = 'https://swapi.co/api/planet/'
+            detailButton.href = `#${planet.url}`
             planetContainer.appendChild(detailButton)
         })
     }
