@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="./public/css/styles.css" type="text/css">
   </head>
   <header>
-    <a href="/week1">Home</a>
+    <a href="/week1/">Home</a>
     <h2 id="hashUpdate"></h2>
   </header>
   <body>
@@ -41,10 +41,8 @@
             console.log(planetDetail)
 
             for (var key in planetDetail) {
-    console.log(planetDetail[key]);
-}
-            // let planetDetailName = planetDetail.name
-            // console.log(planetDetailName)
+              console.log(planetDetail[key]);
+            }
 
             let planetDetailCard = document.createElement("article")
             planetDetailCard.setAttribute("class", "planetContainer")
