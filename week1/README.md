@@ -17,10 +17,10 @@ For the best practices I tried to use a Promise in requesting the data from the 
 
 ## Actor diagram
 
-![Actor diagram](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Actor Diagram")
+![Actor diagram](https://github.com/Techdemo/web-app-from-scratch-18-19/blob/master/week1/public/assets/Actor%20diagram.png?raw=true "Actor Diagram")
 
 ## Interaction diagram
-![Interaction Diagram](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Interaction Diagram")
+![Interaction Diagram](https://github.com/Techdemo/web-app-from-scratch-18-19/blob/master/week1/public/assets/interaction%20diagram.png?raw=true "Interaction Diagram")
 
 ## feature wishlist
 
