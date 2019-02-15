@@ -1,11 +1,6 @@
-# Week 1 - Hello API 🐒
+# Web app from scratch - Swapi API 🐒
 
-[Opdrachten](https://drive.google.com/open?id=1OVhWQNaCgSluYviTKKWcApkyPd23xow1PiExb8GYANM)
-
-[Slides](https://drive.google.com/open?id=1Rjl9xqXoKniQSRJPdkU1O5YwWC33SJK8KiV0a-H_xZU)
-
-[Link](https://techdemo.github.io/web-app-from-scratch-18-19/)
-
+[Link](https://techdemo.github.io/web-app-from-scratch-18-19/week1/)
 ## Purpose of the app
 
 Using the Swapi api, this app maps out all the planets known to the Starwars universe.
@@ -22,11 +17,19 @@ For the best practices I tried to use a Promise in requesting the data from the 
 
 ## Actor diagram
 
+![Actor diagram](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Actor Diagram")
+
 ## Interaction diagram
+![Interaction Diagram](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Interaction Diagram")
 
 ## feature wishlist
 
 ## To do
 
-[ ] Make multiple views  
-[ ] Requests over multiple pages in the API
+[ ] implement templating engine
+[ ] Refactor code
+[ ] implement a Promise.all to render the persons and movies in the planetDetailView
+[ ] return in onHashChange renders not the planetList
+[ ] do some styling to make it look awesome
+[ ] implement local storage
+[ ] implement higher order functions to pass the requirements of this assignment.
