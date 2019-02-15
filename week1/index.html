@@ -31,24 +31,19 @@
             return data.json();
           })
           .then(res =>{
+            console.log(res)
             app.innerHTML = ''
             renderDetail(res)
           })
 
           let renderDetail = planetDetail => {
-
             let planetDetailCard = document.createElement("article")
             planetDetailCard.setAttribute("class", "planetContainer")
             app.appendChild(planetDetailCard)
 
-            let planetDetailTitle = document.createElement("h2")
-            planetDetailTitle.textContent = planetDetail.name
-            planetDetailCard.appendChild(planetDetailTitle)
-
             Object.keys(planetDetail).forEach(function (key) {
-              console.log(key, planetDetail[key]);
              let planetDetailItem = document.createElement("p");
-             planetDetailItem.textContent = key + " : "+ planetDetail[key]
+             planetDetailItem.textContent = key + ": "+ planetDetail[key]
              let article = document.querySelector("article")
              article.appendChild(planetDetailItem)
             });
