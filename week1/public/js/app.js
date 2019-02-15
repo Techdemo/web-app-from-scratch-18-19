@@ -42,10 +42,8 @@ function getData () {
     }
 }
 
-
 getData();
 export { app as app }
-
 
 // to do
 // [ ] Select values resets after every request. Fix that
