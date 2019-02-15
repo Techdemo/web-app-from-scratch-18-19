@@ -40,9 +40,6 @@
           let renderDetail = planetDetail => {
             console.log(planetDetail)
 
-            for (var key in planetDetail) {
-              console.log(planetDetail[key]);
-            }
 
             let planetDetailCard = document.createElement("article")
             planetDetailCard.setAttribute("class", "planetContainer")
@@ -51,10 +48,17 @@
             let planetDetailTitle = document.createElement("h2")
             planetDetailTitle.textContent = planetDetail.name
             planetDetailCard.appendChild(planetDetailTitle)
+
+            let planetDetailList = document.createElement("ul")
+            planetDetailCard.appendChild(planetDetailList)
+            let planetDetailListItem = document.createElement("li")
+            for (let key in planetDetail){
+              console.log(planetDetail[key])
+              // planetDetailList.appendChild(planetDetailListItem)
+              // planetDetailListItem.textContent = "why?"
+            }
           }
       })
-
-
     </script>
 
 </body>
