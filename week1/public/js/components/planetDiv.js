@@ -7,6 +7,7 @@ class planetDiv {
         this.terrain = terrain;
     }
     render (){
+        console.log(this.title)
         this.title.forEach(planet => {
 
             const planetContainer = document.createElement("article")

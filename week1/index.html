@@ -9,7 +9,6 @@
   </head>
   <header>
     <a href="/week1/">Home</a>
-    <h2 id="hashUpdate"></h2>
   </header>
   <body>
     <form>
@@ -38,25 +37,17 @@
           })
 
           let renderDetail = planetDetail => {
-            console.log(planetDetail)
-
-
             let planetDetailCard = document.createElement("article")
             planetDetailCard.setAttribute("class", "planetContainer")
             app.appendChild(planetDetailCard)
 
-            let planetDetailTitle = document.createElement("h2")
-            planetDetailTitle.textContent = planetDetail.name
-            planetDetailCard.appendChild(planetDetailTitle)
+            Object.keys(planetDetail).forEach(function (key) {
+             let planetDetailItem = document.createElement("p");
+             planetDetailItem.textContent = key + ": "+ planetDetail[key]
+             let article = document.querySelector("article")
+             article.appendChild(planetDetailItem)
+            });
 
-            let planetDetailList = document.createElement("ul")
-            planetDetailCard.appendChild(planetDetailList)
-            let planetDetailListItem = document.createElement("li")
-            for (let key in planetDetail){
-              console.log(planetDetail[key])
-              // planetDetailList.appendChild(planetDetailListItem)
-              // planetDetailListItem.textContent = "why?"
-            }
           }
       })
     </script>

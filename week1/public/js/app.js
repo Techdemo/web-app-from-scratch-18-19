@@ -36,16 +36,12 @@ function getData () {
        }
     }
 
-    let populatePlanets = (planets) => {
+    let populatePlanets = planets => {
       let planetContainer = new planetDiv(planets);
       planetContainer.render();
     }
 }
 
-
 getData();
 export { app as app }
 
-
-// to do
-// [ ] Select values resets after every request. Fix that
