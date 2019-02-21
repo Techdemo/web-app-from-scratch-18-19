@@ -55,7 +55,7 @@ function getData () {
       })
       .then(count => {
         let apiPromise = []; 
-        for (let i = count; i >= 0; i --){
+        for (let i = count; i > 0; i --){
           apiPromise.push(fetch(url + i).then(data => {
             return data.json();
           })
