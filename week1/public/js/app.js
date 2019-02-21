@@ -40,8 +40,38 @@ function getData () {
       let planetContainer = new planetDiv(planets);
       planetContainer.render();
     }
-}
 
+    let submitAllButton = document.getElementById("submitAll");
+    submitAllButton.addEventListener("click", getAllData)
+
+    function getAllData(){
+      let pagesRequired = 0; 
+      fetch(url)
+      .then(data => {
+        return data.json();
+      })
+      .then(res => {
+      return Math.ceil(res.count /10);
+      })
+      .then(count => {
+        let apiPromise = []; 
+        for (let i = count; i >= 0; i --){
+          apiPromise.push(fetch(url + i).then(data => {
+            return data.json();
+          })
+        )}
+
+        
+      })
+    }
+     
+}
 getData();
 export { app as app }
 
+
+
+// X get the number of pages first 
+// X then make the appropriate number of api calls
+// pushing the result of each call into an array
+// we then wait for all the promises to resolve, and then do something with the returned data. 
