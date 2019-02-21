@@ -1,6 +1,4 @@
 'use strict';
-
-
 // from component folder
 import { planetDiv } from './components/planetDiv.js';
 
@@ -45,29 +43,26 @@ function getData () {
     submitAllButton.addEventListener("click", getAllData)
 
     function getAllData(){
-      let pagesRequired = 0; 
       fetch(url)
       .then(data => {
         return data.json();
       })
       .then(res => {
-      return Math.ceil(res.count /10);
+      return Math.ceil(res.count / 10);
       })
       .then(count => {
         let apiPromise = []; 
         for (let i = count; i > 0; i --){
-          apiPromise.push(fetch(url + i))
+          apiPromise.push(fetch(url + i).then(data =>{return data.json()}))
         }
-
         Promise.all(apiPromise)
         .then(responses => {
-          const processedResponse = [];
-          responses.map(response => {
-            processedResponse.push(response);
+          console.log(apiPromise)
+          let arr = [];
+          responses.forEach(function(planet){
+            arr.push(planet.results)
           })
-          console.log(processedResponse)
-          // do something with the code here
-        })
+         })
       })
     }
      
@@ -79,6 +74,6 @@ export { app as app }
 
 // X get the number of pages first 
 // X then make the appropriate number of api calls
-// pushing the result of each call into an array
-// we then wait for all the promises to resolve, 
-// and then do something with the returned data. 
+// X pushing the result of each call into an array
+// X we then wait for all the promises to resolve, 
+// X and then do something with the returned data. 
