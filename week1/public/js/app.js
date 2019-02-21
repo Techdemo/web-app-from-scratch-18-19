@@ -56,12 +56,18 @@ function getData () {
       .then(count => {
         let apiPromise = []; 
         for (let i = count; i > 0; i --){
-          apiPromise.push(fetch(url + i).then(data => {
-            return data.json();
-          })
-        )}
+          apiPromise.push(fetch(url + i))
+        }
 
-        
+        Promise.all(apiPromise)
+        .then(responses => {
+          const processedResponse = [];
+          responses.map(response => {
+            processedResponse.push(response);
+          })
+          console.log(processedResponse)
+          // do something with the code here
+        })
       })
     }
      
@@ -74,4 +80,5 @@ export { app as app }
 // X get the number of pages first 
 // X then make the appropriate number of api calls
 // pushing the result of each call into an array
-// we then wait for all the promises to resolve, and then do something with the returned data. 
+// we then wait for all the promises to resolve, 
+// and then do something with the returned data. 
