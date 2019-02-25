@@ -8,10 +8,16 @@
   <link rel="stylesheet" href="./public/css/styles.css" type="text/css">
   </head>
   <header>
-    <a href="/week1/">Home</a>
+    <a href="">Home</a>
   </header>
   <body>
     <form>
+      <select id="climateVal" name="climate">
+        <option value="default">Choose climate</option>
+        <option value="frozen">Frozen</option>
+        <option value="temperate">Temperate</option>
+        <option value="frigid">frigid</option>
+      </select>
         <select id="pageNum">
       </select>
     </form>
@@ -20,22 +26,26 @@
     <main id="root">
 
     </main>
+  <!-- <script type="module" src="./public/js/app.js"></script> -->
   <script type="module" src="./public/js/app.js"></script>
-
     <script>
 
       window.addEventListener('hashchange', function (e){
         let url = window.location.hash.substring(1)
-        let app = document.getElementById("root")
-        fetch(url)
-          .then(data => {
-            return data.json();
-          })
-          .then(res =>{
-            console.log(res)
-            app.innerHTML = ''
-            renderDetail(res)
-          })
+        if (url == ""){
+          console.log("joee")
+        } else {
+            let app = document.getElementById("root")
+          fetch(url)
+            .then(data => {
+              console.log(url)
+              return data.json();
+            })
+            .then(res => {
+              console.log(res)
+              app.innerHTML = ''
+              renderDetail(res)
+            })
 
           let renderDetail = planetDetail => {
             let planetDetailCard = document.createElement("article")
@@ -43,14 +53,16 @@
             app.appendChild(planetDetailCard)
 
             Object.keys(planetDetail).forEach(function (key) {
-             let planetDetailItem = document.createElement("p");
-             planetDetailItem.textContent = key + ": "+ planetDetail[key]
-             let article = document.querySelector("article")
-             article.appendChild(planetDetailItem)
+              let planetDetailItem = document.createElement("p");
+              planetDetailItem.textContent = key + ": " + planetDetail[key]
+              let article = document.querySelector("article")
+              article.appendChild(planetDetailItem)
             });
 
           }
-      })
+        }
+       }
+      )
     </script>
 
 </body>

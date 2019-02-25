@@ -7,6 +7,9 @@ let submit = document.getElementById("submit");
     submit.addEventListener("click", getData)
 
 function getData () {
+  let loaderParent = document.createElement("div");
+  loaderParent.className = "spinner"
+  app.appendChild(loaderParent)
   let pageNum = document.getElementById("pageNum");
   let pageNumValue = pageNum.value
   let url = `https://swapi.co/api/planets/?page=${pageNumValue}`;
@@ -43,6 +46,14 @@ function getData () {
     submitAllButton.addEventListener("click", getAllData)
 
     function getAllData(){
+      let climateSelect = document.getElementById("climateVal");
+      let climateVal = climateSelect.value;
+
+      app.innerHTML = ''
+      let loaderParent = document.createElement("div");
+      loaderParent.className = "spinner"
+      app.appendChild(loaderParent)
+
       fetch(url)
       .then(data => {
         return data.json();
@@ -51,29 +62,40 @@ function getData () {
       return Math.ceil(res.count / 10);
       })
       .then(count => {
-        let apiPromise = []; 
+        let apiPromise = [];
         for (let i = count; i > 0; i --){
           apiPromise.push(fetch(url + i).then(data =>{return data.json()}))
         }
         Promise.all(apiPromise)
         .then(responses => {
-          console.log(apiPromise)
           let arr = [];
-          responses.forEach(function(planet){
-            arr.push(planet.results)
+          responses.map(function(planet){
+            arr.push(...planet.results)
           })
+          if (climateVal === "default") {
+            app.innerHTML = ''
+            console.log("If")
+          } else {
+            let climateArr = arr.filter(function(planet){
+              return planet.climate === `${climateVal}`
+            })
+            return climateArr
+          }
+          return arr
+         })
+         .then(arrRes => {
+           app.innerHTML = ''
+           console.log(arrRes)
+            populatePlanets(arrRes)
          })
       })
     }
-     
 }
 getData();
 export { app as app }
 
-
-
-// X get the number of pages first 
+// X get the number of pages first
 // X then make the appropriate number of api calls
 // X pushing the result of each call into an array
-// X we then wait for all the promises to resolve, 
-// X and then do something with the returned data. 
+// X we then wait for all the promises to resolve,
+// X and then do something with the returned data.
