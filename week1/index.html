@@ -11,20 +11,35 @@
     <a href="">Home</a>
   </header>
   <body>
-    <form>
-      <label>Sort on climate</label>
-      <select id="climateVal" name="climate">
-        <option value="default">no sorting</option>
-        <option value="frozen">Frozen</option>
-        <option value="temperate">Temperate</option>
-        <option value="frigid">frigid</option>
-      </select>
-      <label>select page to render</label>
+  <div class="parentClimate">
+    <input type="checkbox" id="reveal-climate" role="button">
+    <label for="reveal-climate">Sort on climate</label>
+    <div id="climate_div">
+      <form>
+        <select id="climateVal" name="climate">
+          <option value="default">no sorting</option>
+          <option value="frozen">Frozen</option>
+          <option value="temperate">Temperate</option>
+          <option value="frigid">frigid</option>
+        </select>
+        <button id="submitAll">Submit all pages</button>
+      </form>
+    </div>
+  </div>
+  <div class="parentPage">
+    <input type="checkbox" id="reveal-page" role="button">
+    <label for="reveal-page">sort on page</label>
+    <div id="page_div">
+      <form>
+        <label>select page to render</label>
         <select id="pageNum">
-      </select>
-    </form>
+        </select>
+      </form>
       <button id="submit">Search</button>
-      <button id="submitAll">Submit all pages</button>
+    </div>
+  </div>
+
+
     <main id="root">
 
     </main>

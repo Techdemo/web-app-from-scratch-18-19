@@ -44,12 +44,6 @@ body {
   transition: 1.4s linear;
 }
 
-
-
-
-
-
-
 label {
   color: white;
 }
@@ -64,8 +58,6 @@ form > select {
   height: 35px;
   font-size: 18px;
 }
-
-
 
 .spinner {
   width: 40px;
@@ -94,4 +86,18 @@ form > select {
     transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
     -webkit-transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
   }
+}
+
+#climate_div {
+ display: none;
+}
+#page_div {
+ display: none;
+}
+.parentClimate > input[type=checkbox]:checked ~ #climate_div {
+display: block;
+}
+.parentPage >
+input[type=checkbox]:checked ~ #page_div {
+display: block;
 }
