@@ -12,12 +12,14 @@
   </header>
   <body>
     <form>
+      <label>Sort on climate</label>
       <select id="climateVal" name="climate">
-        <option value="default">Choose climate</option>
+        <option value="default">no sorting</option>
         <option value="frozen">Frozen</option>
         <option value="temperate">Temperate</option>
         <option value="frigid">frigid</option>
       </select>
+      <label>select page to render</label>
         <select id="pageNum">
       </select>
     </form>
@@ -29,40 +31,6 @@
   <!-- <script type="module" src="./public/js/app.js"></script> -->
   <script type="module" src="./public/js/app.js"></script>
     <script>
-
-      window.addEventListener('hashchange', function (e){
-        let url = window.location.hash.substring(1)
-        if (url == ""){
-          console.log("joee")
-        } else {
-            let app = document.getElementById("root")
-          fetch(url)
-            .then(data => {
-              console.log(url)
-              return data.json();
-            })
-            .then(res => {
-              console.log(res)
-              app.innerHTML = ''
-              renderDetail(res)
-            })
-
-          let renderDetail = planetDetail => {
-            let planetDetailCard = document.createElement("article")
-            planetDetailCard.setAttribute("class", "planetContainer")
-            app.appendChild(planetDetailCard)
-
-            Object.keys(planetDetail).forEach(function (key) {
-              let planetDetailItem = document.createElement("p");
-              planetDetailItem.textContent = key + ": " + planetDetail[key]
-              let article = document.querySelector("article")
-              article.appendChild(planetDetailItem)
-            });
-
-          }
-        }
-       }
-      )
     </script>
 
 </body>
