@@ -12,12 +12,12 @@ function getAllData() {
 
     sanitize()
     addLoader()
-
     fetch(url)
         .then(data => {
             return data.json();
         })
         .then(res => {
+            console.log(res)
             return Math.ceil(res.count / 10);
         })
         .then(count => {
