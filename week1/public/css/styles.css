@@ -96,6 +96,11 @@ form > select {
 }
 .parentClimate > input[type=checkbox]:checked ~ #climate_div {
 display: block;
+padding: 1.5rem;
+}
+button {
+  padding: 15px;
+  border: none;
 }
 .parentPage >
 input[type=checkbox]:checked ~ #page_div {
