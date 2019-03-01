@@ -5,8 +5,7 @@
 [Link](https://techdemo.github.io/web-app-from-scratch-18-19/week1/)
 ## Purpose of the app
 Using the Swapi api, this app maps out all the planets known to the Starwars universe.
-My goal is to broaden the view people have of the starwars universe. There are more stories to be told than the story of Han Solo, Luke Skywalker etc. I want to achieve this by making a chart or a map for all the planets known to the Starwars universe.
-The user can then compare sizes of planets to other planets. Or compare size of each solar system. There will also be a detailpage of every planet and solar system.
+My goal is to broaden the view people have of the starwars universe. There are more stories to be told than the story of Han Solo, Luke Skywalker etc. I want to achieve this by making a chart or a map for all the planets known to the Starwars universe. It is possible to render different pages of the api results, ten at a time. But by requesting all of the planet results it is possible to filter the list based on different properties of a planet. So in this prototype it is possible to filter based on climate.
 
 ## Api
 The [Swapi api](https://swapi.co/) has a rate limit of 10,000 requests from one ip-adress. Which makes it a good api for development. The api returns JSON, requests are in JSON and no authentication is needed. The data returned is pretty explanatory. The query just returns an object named _results_ and it contains every planetArray.
