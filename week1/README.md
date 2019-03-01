@@ -2,6 +2,7 @@
 
 ![page of app](https://github.com/Techdemo/web-app-from-scratch-18-19/blob/master/week1/public/assets/page.png?raw=true "front page of app")
 
+## link to prototype
 [Link](https://techdemo.github.io/web-app-from-scratch-18-19/week1/)
 ## Purpose of the app
 Using the Swapi api, this app maps out all the planets known to the Starwars universe.
