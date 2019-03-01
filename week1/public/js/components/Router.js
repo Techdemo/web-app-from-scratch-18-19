@@ -14,7 +14,6 @@ init () {
         if (hash == "") {
             getData();
         } else {
-            console.log("else")
             renderPlanetDetail(hash)
                 }
             }

@@ -33,7 +33,6 @@ function getAllData() {
                     })
                     if (climateVal === "default") {
                         app.innerHTML = ''
-                        console.log("If")
                     } else {
                         let climateArr = arr.filter(function (planet) {
                             return planet.climate === `${climateVal}`

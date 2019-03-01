@@ -11,7 +11,6 @@ let submit = document.getElementById("submit");
 let submitAllButton = document.getElementById("submitAll");
 submitAllButton.addEventListener("click", getAllData)
 
-
 const router = new Router();
 router.init()
 
